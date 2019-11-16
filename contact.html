@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>МАКСИМ И АНАСТАСИЯ ЦИРЛИНЫ</TITLE>
+<META  name="keywords" content="аппликации, художественные изделия из металла, дерева, пластика,
+ фотография, декор">
+<META name="description" content="реклама, дизайн интерьеров, дизайн аксессуаров">
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<META name="robots" content="index,follow">
+<META name="revisit" content="3 days">
+<META name="revisit-after" content="3">
+<META content="MSHTML 6.00.2600.0" name=GENERATOR>
+<LINK href="style.css" type=text/css rel=stylesheet>
+<script language="JavaScript" type="text/javascript">
+var mapcn= new Image;
+var house= new Image;
+mapcn.src="img/map.jpg";
+house.src="img/moh8.jpg";
+var inputs=["name","mail","phone","tema","send","reset"];
+var label=["Имя","E-mail","Телефон","Тема","",""];
+with(document)
+{
+write("<FORM method='post' action='/cgi-bin/contacter.cgi'",
+" onsubmit='return formtest()' onreset='return formcleen()'>");
+for(var i in inputs)
+   {
+var str=(i<inputs.length-2)?' onfocus="fy(this)">':
+(i<inputs.length-1)?' type=submit value=Послать>':' type=reset>';
+write("<INPUT name="+inputs[i]+" id="+inputs[i]+str);
+str="l"+i;
+write("<DIV id='"+str+"' class='l'>"+label[i]+"</DIV>");
+   }
+write("<TEXTAREA name='message' id='message'></TEXTAREA></FORM>",
+"<DIV id='l6' class='l'>Сообщение</DIV>");   
+}
+function formtest()
+{
+for(var i=0;i<inputs.length-2;i++)
+     {
+var o=document.getElementById(inputs[i]);
+var ob=o.value;
+if((!ob.length)||
+   ((i==1)&&(!/[^@]+@(\w+\.)+\w+/.test(ob)))||
+   ((i==2)&&((!/^[\d\)\(\x20+-]/.test(ob))||(/[^0-9\)\(\x20+-]/.test(ob)))))
+       {
+       o.style.backgroundImage='url(img/bat.gif)';
+       alert('анкета заполнена неправильно!');
+       return false;
+       }
+     }
+return true;
+}
+function formcleen()
+{
+for(var i=0;i<inputs.length-2; i++)
+     {
+var o=document.getElementById(inputs[i]);
+o.style.backgroundImage='url(img/but.gif)';
+     }
+return true;
+}
+function fy(o)
+{
+o.style.backgroundImage='url(img/but.gif)';
+}
+</SCRIPT>
+<SCRIPT language="JavaScript" type="text/javascript" src="script.js"></SCRIPT>
+</HEAD>
+<BODY topmargin=0 background="img/bg.jpg" onload="set()">
+<IMG id="base" src="img/apple.jpg">
+<IMG id="redbar" src="img/redbar.gif">
+<MAP NAME="HOUSE">
+<AREA SHAPE="RECT" COORDS="182,58,192,68" href="" title="Моховая, 8"
+onmouseover="document.map.src=house.src"
+onmouseout="document.map.src=mapcn.src">
+</MAP>
+<IMAGE id="map" src="img/map.jpg" hspace=4 USEMAP="#HOUSE" name="map" border=0>
+<DIV id="h">Готовы связаться с нами? Связывайтесь!</DIV>
+<DIV id="txt">191187 г.Санкт-Петербург, ул.Моховая д.8, ООО "МП"Цитрон"<BR>
+ Анастасии и Максиму Цирлиным<BR>Контактный телефон: +7(921)955-38-05.</DIV>
+</BODY>
